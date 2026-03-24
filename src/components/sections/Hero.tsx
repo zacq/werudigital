@@ -14,7 +14,7 @@ export default function Hero() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         {/* Logo placeholder — swap with <Image> when you have the asset */}
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#C8102E] to-[#F97316] flex items-center justify-center font-bold text-white text-sm shadow-lg">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#f97d00] to-[#C8102E] flex items-center justify-center font-bold text-white text-sm shadow-lg">
           W
         </div>
         <span className="text-white font-bold text-lg tracking-wide">Weru Digital</span>
@@ -30,19 +30,19 @@ export default function Hero() {
         <motion.div
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass"
           style={{
-            background: "rgba(200, 16, 46, 0.2)",
-            border: "1px solid rgba(200, 16, 46, 0.5)",
-            boxShadow: "0 0 20px rgba(200, 16, 46, 0.3)",
+            background: "rgba(249, 125, 0, 0.18)",
+            border: "1px solid rgba(249, 125, 0, 0.5)",
+            boxShadow: "0 0 20px rgba(249, 125, 0, 0.3)",
           }}
           animate={{ boxShadow: [
-            "0 0 20px rgba(200, 16, 46, 0.3)",
-            "0 0 35px rgba(200, 16, 46, 0.6)",
-            "0 0 20px rgba(200, 16, 46, 0.3)",
+            "0 0 20px rgba(249, 125, 0, 0.3)",
+            "0 0 35px rgba(249, 125, 0, 0.65)",
+            "0 0 20px rgba(249, 125, 0, 0.3)",
           ]}}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
           <motion.span
-            className="w-2 h-2 rounded-full bg-[#C8102E]"
+            className="w-2 h-2 rounded-full bg-[#f97d00]"
             animate={{ opacity: [1, 0.3, 1] }}
             transition={{ duration: 1.2, repeat: Infinity }}
           />
@@ -63,7 +63,7 @@ export default function Hero() {
           Watch.{" "}
           <span
             style={{
-              background: "linear-gradient(90deg, #C8102E, #F97316)",
+              background: "linear-gradient(90deg, #f97d00, #C8102E)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}

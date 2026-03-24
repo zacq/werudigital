@@ -10,7 +10,7 @@ const ads = [
     tagline: "Reach thousands of engaged viewers daily",
     cta: "Advertise With Us",
     href: "mailto:ads@werudigital.co.ke",
-    accent: "#FACC15",
+    accent: "#f97d00",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const ads = [
     tagline: "Connect with Kenya's fastest-growing audience",
     cta: "Learn More",
     href: "mailto:ads@werudigital.co.ke",
-    accent: "#F97316",
+    accent: "#f97d00",
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ export default function AdZone() {
               key={i}
               onClick={() => setCurrent(i)}
               className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                i === current ? "bg-[#F97316] w-4" : "bg-white/20"
+                i === current ? "bg-[#f97d00] w-4" : "bg-white/20"
               }`}
             />
           ))}

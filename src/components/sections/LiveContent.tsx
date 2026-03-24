@@ -49,8 +49,8 @@ export default function LiveContent() {
                 className="absolute inset-0"
                 style={{
                   background: `linear-gradient(135deg,
-                    rgba(${i % 2 === 0 ? "200,16,46" : "249,115,22"}, 0.35) 0%,
-                    rgba(10,10,10,0.8) 100%)`,
+                    rgba(${i % 2 === 0 ? "249,125,0" : "200,16,46"}, 0.4) 0%,
+                    rgba(10,5,0,0.85) 100%)`,
                 }}
               />
               {/* Play icon */}
@@ -61,7 +61,7 @@ export default function LiveContent() {
                     background: "rgba(255,255,255,0.15)",
                     backdropFilter: "blur(8px)",
                     border: "1px solid rgba(255,255,255,0.2)",
-                    boxShadow: "0 0 16px rgba(249,115,22,0.4)",
+                    boxShadow: "0 0 16px rgba(249,125,0,0.55)",
                   }}
                 >
                   <span className="text-lg ml-0.5">▶</span>

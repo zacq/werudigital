@@ -33,21 +33,21 @@ export default function GlassButton({
   const variantClasses: Record<string, string> = {
     primary: `
       glass px-6 py-3.5 rounded-2xl
-      bg-gradient-to-r from-[rgba(200,16,46,0.3)] to-[rgba(249,115,22,0.2)]
-      border border-[rgba(200,16,46,0.4)]
-      hover:border-[rgba(200,16,46,0.7)]
+      bg-gradient-to-r from-[rgba(249,125,0,0.35)] to-[rgba(200,16,46,0.2)]
+      border border-[rgba(249,125,0,0.5)]
+      hover:border-[rgba(249,125,0,0.8)]
     `,
     secondary: `
       glass px-6 py-3.5 rounded-2xl
-      bg-[rgba(255,255,255,0.08)]
-      border border-[rgba(255,255,255,0.15)]
-      hover:border-[rgba(255,255,255,0.3)]
+      bg-gradient-to-r from-[rgba(200,16,46,0.2)] to-[rgba(249,125,0,0.1)]
+      border border-[rgba(200,16,46,0.35)]
+      hover:border-[rgba(200,16,46,0.6)]
     `,
     pill: `
       glass-sm px-5 py-3.5 rounded-full
-      bg-[rgba(255,255,255,0.07)]
-      border border-[rgba(255,255,255,0.12)]
-      hover:border-[rgba(249,115,22,0.4)]
+      bg-[rgba(249,125,0,0.08)]
+      border border-[rgba(249,125,0,0.2)]
+      hover:border-[rgba(249,125,0,0.5)]
       text-sm
     `,
   };

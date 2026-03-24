@@ -4,9 +4,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const presenters = [
-  { name: "Sarah Mwangi", show: "Morning Glory", initials: "SM", color: "#C8102E" },
-  { name: "James Kariuki", show: "Evening Digest", initials: "JK", color: "#F97316" },
-  { name: "Amina Hassan", show: "Weekend Live", initials: "AH", color: "#FACC15" },
+  { name: "Sarah Mwangi", show: "Morning Glory", initials: "SM", color: "#f97d00" },
+  { name: "James Kariuki", show: "Evening Digest", initials: "JK", color: "#C8102E" },
+  { name: "Amina Hassan", show: "Weekend Live", initials: "AH", color: "#f97d00" },
   { name: "David Ochieng", show: "Sports Central", initials: "DO", color: "#C8102E" },
 ];
 

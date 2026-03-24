@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
+  --color-weru-orange: #f97d00;
   --color-weru-red: #C8102E;
-  --color-weru-orange: #F97316;
   --color-weru-gold: #FACC15;
   --color-weru-black: #0A0A0A;
   --color-glass-bg: rgba(255, 255, 255, 0.08);
@@ -11,8 +11,8 @@
   --backdrop-blur-glass: 16px;
 
   --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --shadow-glow-orange: 0 0 20px rgba(249, 125, 0, 0.5);
   --shadow-glow-red: 0 0 20px rgba(200, 16, 46, 0.4);
-  --shadow-glow-orange: 0 0 20px rgba(249, 115, 22, 0.4);
   --shadow-glow-gold: 0 0 20px rgba(250, 204, 21, 0.4);
 
   --font-sans: var(--font-geist-sans);
@@ -20,7 +20,7 @@
 }
 
 :root {
-  --background: #0A0A0A;
+  --background: #1a0d00;
   --foreground: #f0f0f0;
 }
 
@@ -66,12 +66,12 @@ body {
   will-change: transform;
 }
 
-.glow-red {
-  box-shadow: 0 0 20px rgba(200, 16, 46, 0.4), 0 8px 32px rgba(0, 0, 0, 0.25);
+.glow-orange {
+  box-shadow: 0 0 24px rgba(249, 125, 0, 0.55), 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.glow-orange {
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.4), 0 8px 32px rgba(0, 0, 0, 0.25);
+.glow-red {
+  box-shadow: 0 0 20px rgba(200, 16, 46, 0.45), 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .glow-gold {
@@ -87,7 +87,7 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(200, 16, 46, 0.4);
+  background: rgba(249, 125, 0, 0.5);
   border-radius: 2px;
 }
 

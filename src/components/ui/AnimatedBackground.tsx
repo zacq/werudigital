@@ -46,26 +46,39 @@ export default function AnimatedBackground() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Base gradient
+      // Base gradient — orange dominant, deep red sections
       const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      grad.addColorStop(0, "#1a0008");
-      grad.addColorStop(0.4, "#2d0815");
-      grad.addColorStop(0.7, "#1a0e00");
-      grad.addColorStop(1, "#0a0a0a");
+      grad.addColorStop(0, "#1f0d00");
+      grad.addColorStop(0.3, "#2e1200");
+      grad.addColorStop(0.6, "#1a0a00");
+      grad.addColorStop(1, "#0d0300");
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Radial glow behind hero
-      const radGlow = ctx.createRadialGradient(
+      // Orange radial glow — dominant, behind hero
+      const radOrange = ctx.createRadialGradient(
         canvas.width / 2, canvas.height * 0.3,
         0,
         canvas.width / 2, canvas.height * 0.3,
-        canvas.width * 0.6
+        canvas.width * 0.65
       );
-      radGlow.addColorStop(0, "rgba(200, 16, 46, 0.12)");
-      radGlow.addColorStop(0.5, "rgba(249, 115, 22, 0.06)");
-      radGlow.addColorStop(1, "transparent");
-      ctx.fillStyle = radGlow;
+      radOrange.addColorStop(0, "rgba(249, 125, 0, 0.22)");
+      radOrange.addColorStop(0.45, "rgba(249, 125, 0, 0.08)");
+      radOrange.addColorStop(1, "transparent");
+      ctx.fillStyle = radOrange;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Deep red accent glow — bottom section
+      const radRed = ctx.createRadialGradient(
+        canvas.width * 0.15, canvas.height * 0.8,
+        0,
+        canvas.width * 0.15, canvas.height * 0.8,
+        canvas.width * 0.5
+      );
+      radRed.addColorStop(0, "rgba(200, 16, 46, 0.18)");
+      radRed.addColorStop(0.5, "rgba(200, 16, 46, 0.06)");
+      radRed.addColorStop(1, "transparent");
+      ctx.fillStyle = radRed;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Light streaks
@@ -75,9 +88,9 @@ export default function AnimatedBackground() {
         ctx.rotate((s.angle * Math.PI) / 180);
 
         const streakGrad = ctx.createLinearGradient(0, 0, 0, s.height);
-        streakGrad.addColorStop(0, `rgba(255, 180, 100, 0)`);
-        streakGrad.addColorStop(0.5, `rgba(255, 180, 100, ${s.opacity})`);
-        streakGrad.addColorStop(1, `rgba(255, 180, 100, 0)`);
+        streakGrad.addColorStop(0, `rgba(249, 125, 0, 0)`);
+        streakGrad.addColorStop(0.5, `rgba(249, 125, 0, ${s.opacity})`);
+        streakGrad.addColorStop(1, `rgba(249, 125, 0, 0)`);
 
         ctx.fillStyle = streakGrad;
         ctx.fillRect(-s.width / 2, 0, s.width, s.height);
