@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-weru-red: #C8102E;
+  --color-weru-orange: #F97316;
+  --color-weru-gold: #FACC15;
+  --color-weru-black: #0A0A0A;
+  --color-glass-bg: rgba(255, 255, 255, 0.08);
+  --color-glass-border: rgba(255, 255, 255, 0.12);
+
+  --backdrop-blur-glass: 16px;
+
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --shadow-glow-red: 0 0 20px rgba(200, 16, 46, 0.4);
+  --shadow-glow-orange: 0 0 20px rgba(249, 115, 22, 0.4);
+  --shadow-glow-gold: 0 0 20px rgba(250, 204, 21, 0.4);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #0A0A0A;
+  --foreground: #f0f0f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  overflow-x: hidden;
+}
+
+/* Glass base classes */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  will-change: transform;
+}
+
+.glass-sm {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  will-change: transform;
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  will-change: transform;
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(200, 16, 46, 0.4), 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.glow-orange {
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.4), 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.3), 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 16, 46, 0.4);
+  border-radius: 2px;
+}
+
+/* Hide scrollbar for horizontal carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
