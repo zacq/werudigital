@@ -30,7 +30,7 @@ export default function ContactHub() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        style={{ boxShadow: "0 0 40px rgba(200,16,46,0.1), 0 12px 40px rgba(0,0,0,0.35)" }}
+        style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.12), 0 12px 40px rgba(0,0,0,0.5)" }}
       >
         {actions.map((action, i) => (
           <motion.div
@@ -49,7 +49,7 @@ export default function ContactHub() {
             >
               <div className="flex flex-col items-start">
                 <span className="font-semibold text-sm text-white">{action.label}</span>
-                <span className="text-[10px] text-white/40 font-normal">{action.hint}</span>
+                <span className="text-[10px] text-white/60 font-normal">{action.hint}</span>
               </div>
             </GlassButton>
           </motion.div>

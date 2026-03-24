@@ -15,12 +15,12 @@ export default function GlassTile({ icon, label, href, onClick, className = "" }
   const content = (
     <>
       <span className="text-3xl mb-2 drop-shadow-lg">{icon}</span>
-      <span className="text-xs font-medium text-white/80 tracking-wide">{label}</span>
-      {/* Glow overlay on hover handled via motion */}
+      <span className="text-xs font-semibold text-white tracking-wide">{label}</span>
+      {/* Bright highlight on hover */}
       <span
         className="absolute inset-0 rounded-[inherit] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
-          background: "radial-gradient(circle at 50% 40%, rgba(249,115,22,0.15) 0%, transparent 70%)",
+          background: "radial-gradient(circle at 50% 40%, rgba(255,255,255,0.12) 0%, transparent 70%)",
         }}
       />
     </>

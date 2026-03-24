@@ -30,19 +30,19 @@ export default function Hero() {
         <motion.div
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass"
           style={{
-            background: "rgba(249, 125, 0, 0.18)",
-            border: "1px solid rgba(249, 125, 0, 0.5)",
-            boxShadow: "0 0 20px rgba(249, 125, 0, 0.3)",
+            background: "rgba(0, 0, 0, 0.4)",
+            border: "1px solid rgba(255, 255, 255, 0.35)",
+            boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
           }}
           animate={{ boxShadow: [
-            "0 0 20px rgba(249, 125, 0, 0.3)",
-            "0 0 35px rgba(249, 125, 0, 0.65)",
-            "0 0 20px rgba(249, 125, 0, 0.3)",
+            "0 0 16px rgba(0,0,0,0.3)",
+            "0 0 28px rgba(0,0,0,0.5)",
+            "0 0 16px rgba(0,0,0,0.3)",
           ]}}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
           <motion.span
-            className="w-2 h-2 rounded-full bg-[#f97d00]"
+            className="w-2 h-2 rounded-full bg-white"
             animate={{ opacity: [1, 0.3, 1] }}
             transition={{ duration: 1.2, repeat: Infinity }}
           />

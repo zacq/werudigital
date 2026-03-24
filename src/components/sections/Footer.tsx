@@ -21,9 +21,9 @@ export default function Footer() {
       <div
         className="max-w-sm mx-auto px-5 py-4 rounded-2xl flex flex-col items-center gap-4"
         style={{
-          background: "rgba(255,255,255,0.04)",
-          backdropFilter: "blur(12px)",
-          border: "1px solid rgba(255,255,255,0.07)",
+          background: "rgba(0,0,0,0.4)",
+          backdropFilter: "blur(16px)",
+          border: "1px solid rgba(255,255,255,0.15)",
         }}
       >
         {/* Social icons */}
@@ -35,7 +35,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="w-8 h-8 rounded-full flex items-center justify-center text-white/50 hover:text-white/90 hover:bg-white/10 transition-all duration-200 text-sm font-bold"
+              className="w-8 h-8 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/15 transition-all duration-200 text-sm font-bold"
             >
               {s.icon}
             </a>
@@ -47,10 +47,10 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center">
-          <p className="text-[10px] text-white/30">
+          <p className="text-[10px] text-white/60">
             © {new Date().getFullYear()} Weru Digital. All rights reserved.
           </p>
-          <p className="text-[10px] text-white/20 mt-0.5">
+          <p className="text-[10px] text-white/40 mt-0.5">
             werudigital.co.ke/connect
           </p>
         </div>

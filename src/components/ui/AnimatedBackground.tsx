@@ -36,7 +36,7 @@ export default function AnimatedBackground() {
       y: Math.random() * canvas.height,
       width: Math.random() * 2 + 0.5,
       height: Math.random() * 120 + 60,
-      opacity: Math.random() * 0.12 + 0.03,
+      opacity: Math.random() * 0.2 + 0.07,
       speed: Math.random() * 0.3 + 0.1,
       angle: Math.random() * 20 - 10,
     });
@@ -46,39 +46,51 @@ export default function AnimatedBackground() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Base gradient — orange dominant, deep red sections
-      const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      grad.addColorStop(0, "#1f0d00");
-      grad.addColorStop(0.3, "#2e1200");
-      grad.addColorStop(0.6, "#1a0a00");
-      grad.addColorStop(1, "#0d0300");
+      // Base gradient — vivid orange top, red-dark fade toward bottom
+      const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      grad.addColorStop(0,    "#f97d00");   // vivid orange top
+      grad.addColorStop(0.35, "#e06500");   // deep orange mid
+      grad.addColorStop(0.65, "#8B2200");   // dark orange-red
+      grad.addColorStop(1,    "#1a0400");   // near-black bottom
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Orange radial glow — dominant, behind hero
-      const radOrange = ctx.createRadialGradient(
-        canvas.width / 2, canvas.height * 0.3,
+      // Bright orange burst at top-centre — hero zone
+      const radTop = ctx.createRadialGradient(
+        canvas.width / 2, 0,
         0,
-        canvas.width / 2, canvas.height * 0.3,
-        canvas.width * 0.65
+        canvas.width / 2, 0,
+        canvas.width * 0.7
       );
-      radOrange.addColorStop(0, "rgba(249, 125, 0, 0.22)");
-      radOrange.addColorStop(0.45, "rgba(249, 125, 0, 0.08)");
-      radOrange.addColorStop(1, "transparent");
-      ctx.fillStyle = radOrange;
+      radTop.addColorStop(0,   "rgba(255, 160, 30, 0.45)");
+      radTop.addColorStop(0.5, "rgba(249, 125, 0, 0.15)");
+      radTop.addColorStop(1,   "transparent");
+      ctx.fillStyle = radTop;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Deep red accent glow — bottom section
-      const radRed = ctx.createRadialGradient(
-        canvas.width * 0.15, canvas.height * 0.8,
+      // Deep red shadow — bottom corners for depth
+      const radBL = ctx.createRadialGradient(
+        0, canvas.height,
         0,
-        canvas.width * 0.15, canvas.height * 0.8,
-        canvas.width * 0.5
+        0, canvas.height,
+        canvas.width * 0.6
       );
-      radRed.addColorStop(0, "rgba(200, 16, 46, 0.18)");
-      radRed.addColorStop(0.5, "rgba(200, 16, 46, 0.06)");
-      radRed.addColorStop(1, "transparent");
-      ctx.fillStyle = radRed;
+      radBL.addColorStop(0,   "rgba(140, 10, 30, 0.55)");
+      radBL.addColorStop(0.6, "rgba(80, 5, 15, 0.2)");
+      radBL.addColorStop(1,   "transparent");
+      ctx.fillStyle = radBL;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const radBR = ctx.createRadialGradient(
+        canvas.width, canvas.height,
+        0,
+        canvas.width, canvas.height,
+        canvas.width * 0.55
+      );
+      radBR.addColorStop(0,   "rgba(100, 5, 20, 0.45)");
+      radBR.addColorStop(0.6, "rgba(50, 3, 10, 0.15)");
+      radBR.addColorStop(1,   "transparent");
+      ctx.fillStyle = radBR;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Light streaks
@@ -88,9 +100,9 @@ export default function AnimatedBackground() {
         ctx.rotate((s.angle * Math.PI) / 180);
 
         const streakGrad = ctx.createLinearGradient(0, 0, 0, s.height);
-        streakGrad.addColorStop(0, `rgba(249, 125, 0, 0)`);
-        streakGrad.addColorStop(0.5, `rgba(249, 125, 0, ${s.opacity})`);
-        streakGrad.addColorStop(1, `rgba(249, 125, 0, 0)`);
+        streakGrad.addColorStop(0,   `rgba(255, 220, 120, 0)`);
+        streakGrad.addColorStop(0.5, `rgba(255, 220, 120, ${s.opacity})`);
+        streakGrad.addColorStop(1,   `rgba(255, 220, 120, 0)`);
 
         ctx.fillStyle = streakGrad;
         ctx.fillRect(-s.width / 2, 0, s.width, s.height);
