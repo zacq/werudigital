@@ -64,8 +64,8 @@ export default function Presenters() {
         transition={{ duration: 0.5 }}
         className="px-5 mb-5"
       >
-        <h2 className="text-xl font-bold text-white/90">Meet the Presenters</h2>
-        <p className="text-xs text-white/40 mt-1">The voices of Weru</p>
+        <h2 className="text-xl font-bold text-white">Meet the Presenters</h2>
+        <p className="text-xs text-white/75 mt-1">The voices of Weru</p>
       </motion.div>
 
       <div className="flex gap-4 overflow-x-auto no-scrollbar px-5 pb-2">

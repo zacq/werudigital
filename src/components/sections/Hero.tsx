@@ -59,13 +59,16 @@ export default function Hero() {
         transition={{ delay: 0.35, duration: 0.6 }}
         className="mb-3"
       >
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight"
+          style={{ textShadow: "0 2px 12px rgba(0,0,0,0.4)" }}
+        >
           Watch.{" "}
           <span
             style={{
-              background: "linear-gradient(90deg, #f97d00, #C8102E)",
+              background: "linear-gradient(90deg, #FACC15, #fff8e0)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              filter: "drop-shadow(0 1px 6px rgba(0,0,0,0.3))",
             }}
           >
             Listen.
@@ -78,7 +81,8 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
-        className="text-white/60 text-base mb-10 max-w-xs leading-relaxed"
+        className="text-white text-base mb-10 max-w-xs leading-relaxed"
+        style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
       >
         Kenya&apos;s premier broadcast experience — now in your hands.
       </motion.p>

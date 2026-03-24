@@ -34,8 +34,8 @@ export default function QuickAccess() {
         transition={{ duration: 0.5 }}
         className="mb-6"
       >
-        <h2 className="text-xl font-bold text-white/90 text-center">Quick Access</h2>
-        <p className="text-xs text-white/40 text-center mt-1">Tap to connect instantly</p>
+        <h2 className="text-xl font-bold text-white text-center">Quick Access</h2>
+        <p className="text-xs text-white/75 text-center mt-1">Tap to connect instantly</p>
       </motion.div>
 
       <motion.div

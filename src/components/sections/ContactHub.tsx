@@ -20,8 +20,8 @@ export default function ContactHub() {
         transition={{ duration: 0.5 }}
         className="mb-5"
       >
-        <h2 className="text-xl font-bold text-white/90">Get in Touch</h2>
-        <p className="text-xs text-white/40 mt-1">We&apos;re always on air for you</p>
+        <h2 className="text-xl font-bold text-white">Get in Touch</h2>
+        <p className="text-xs text-white/75 mt-1">We&apos;re always on air for you</p>
       </motion.div>
 
       <motion.div

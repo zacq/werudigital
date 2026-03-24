@@ -19,8 +19,8 @@ export default function LiveContent() {
         transition={{ duration: 0.5 }}
         className="px-5 mb-5"
       >
-        <h2 className="text-xl font-bold text-white/90">Live Content</h2>
-        <p className="text-xs text-white/40 mt-1">Swipe to browse</p>
+        <h2 className="text-xl font-bold text-white">Live Content</h2>
+        <p className="text-xs text-white/75 mt-1">Swipe to browse</p>
       </motion.div>
 
       <motion.div
@@ -88,8 +88,8 @@ export default function LiveContent() {
             </div>
             {/* Info */}
             <div className="mt-2 px-1">
-              <p className="text-xs font-semibold text-white/90 leading-snug line-clamp-2">{item.title}</p>
-              <p className="text-[10px] text-white/40 mt-0.5">{item.duration}</p>
+              <p className="text-xs font-semibold text-white leading-snug line-clamp-2">{item.title}</p>
+              <p className="text-[10px] text-white/75 mt-0.5">{item.duration}</p>
             </div>
           </motion.div>
         ))}
