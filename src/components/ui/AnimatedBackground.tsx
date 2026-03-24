@@ -12,7 +12,7 @@ export default function AnimatedBackground() {
     if (!ctx) return;
 
     let animFrameId: number;
-    let streaks: Streak[] = [];
+    const streaks: Streak[] = [];
 
     const resize = () => {
       canvas.width = window.innerWidth;
