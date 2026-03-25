@@ -12,7 +12,7 @@ const actions = [
 
 export default function ContactHub() {
   return (
-    <section className="relative z-10 px-5 pb-12">
+    <section className="relative z-10 px-5 pb-12" style={{ background: "#111111" }}>
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}

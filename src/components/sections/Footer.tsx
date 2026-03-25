@@ -13,6 +13,7 @@ export default function Footer() {
   return (
     <motion.footer
       className="relative z-10 px-5 pb-8 pt-4"
+      style={{ background: "#7A1010" }}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

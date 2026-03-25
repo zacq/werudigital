@@ -36,7 +36,7 @@ export default function AnimatedBackground() {
       y: Math.random() * canvas.height,
       width: Math.random() * 2 + 0.5,
       height: Math.random() * 120 + 60,
-      opacity: Math.random() * 0.2 + 0.07,
+      opacity: Math.random() * 0.08 + 0.03,
       speed: Math.random() * 0.3 + 0.1,
       angle: Math.random() * 20 - 10,
     });
@@ -46,51 +46,33 @@ export default function AnimatedBackground() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Base gradient — vivid orange top, red-dark fade toward bottom
-      const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      grad.addColorStop(0,    "#f97d00");   // vivid orange top
-      grad.addColorStop(0.35, "#e06500");   // deep orange mid
-      grad.addColorStop(0.65, "#8B2200");   // dark orange-red
-      grad.addColorStop(1,    "#1a0400");   // near-black bottom
-      ctx.fillStyle = grad;
+      // Base: near-black page body
+      ctx.fillStyle = "#0A0A0A";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Bright orange burst at top-centre — hero zone
-      const radTop = ctx.createRadialGradient(
-        canvas.width / 2, 0,
+      // Hero zone — deep red atmospheric glow (top-centre)
+      const radHero = ctx.createRadialGradient(
+        canvas.width / 2, canvas.height * 0.25,
         0,
-        canvas.width / 2, 0,
-        canvas.width * 0.7
+        canvas.width / 2, canvas.height * 0.25,
+        canvas.width * 0.65
       );
-      radTop.addColorStop(0,   "rgba(255, 160, 30, 0.45)");
-      radTop.addColorStop(0.5, "rgba(249, 125, 0, 0.15)");
-      radTop.addColorStop(1,   "transparent");
-      ctx.fillStyle = radTop;
+      radHero.addColorStop(0,   "rgba(107, 10, 10, 0.70)");  // deeper-red #6B0A0A
+      radHero.addColorStop(0.45, "rgba(122, 16, 16, 0.35)"); // dark-red #7A1010
+      radHero.addColorStop(1,   "transparent");
+      ctx.fillStyle = radHero;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Deep red shadow — bottom corners for depth
-      const radBL = ctx.createRadialGradient(
-        0, canvas.height,
+      // Subtle orange warmth — mid-left accent
+      const radOrange = ctx.createRadialGradient(
+        0, canvas.height * 0.5,
         0,
-        0, canvas.height,
-        canvas.width * 0.6
+        0, canvas.height * 0.5,
+        canvas.width * 0.5
       );
-      radBL.addColorStop(0,   "rgba(140, 10, 30, 0.55)");
-      radBL.addColorStop(0.6, "rgba(80, 5, 15, 0.2)");
-      radBL.addColorStop(1,   "transparent");
-      ctx.fillStyle = radBL;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      const radBR = ctx.createRadialGradient(
-        canvas.width, canvas.height,
-        0,
-        canvas.width, canvas.height,
-        canvas.width * 0.55
-      );
-      radBR.addColorStop(0,   "rgba(100, 5, 20, 0.45)");
-      radBR.addColorStop(0.6, "rgba(50, 3, 10, 0.15)");
-      radBR.addColorStop(1,   "transparent");
-      ctx.fillStyle = radBR;
+      radOrange.addColorStop(0,   "rgba(249, 125, 0, 0.10)");
+      radOrange.addColorStop(1,   "transparent");
+      ctx.fillStyle = radOrange;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Light streaks
