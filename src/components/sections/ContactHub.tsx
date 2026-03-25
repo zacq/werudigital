@@ -12,7 +12,7 @@ const actions = [
 
 export default function ContactHub() {
   return (
-    <section className="relative z-10 px-5 pb-12" style={{ background: "#111111" }}>
+    <section className="relative z-10 px-5 pt-10 pb-12" style={{ background: "#f97d00" }}>
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -20,8 +20,8 @@ export default function ContactHub() {
         transition={{ duration: 0.5 }}
         className="mb-5"
       >
-        <h2 className="text-xl font-bold text-white">Get in Touch</h2>
-        <p className="text-xs text-white/75 mt-1">We&apos;re always on air for you</p>
+        <h2 className="text-xl font-bold text-[#111111]">Get in Touch</h2>
+        <p className="text-xs text-[#111111]/70 mt-1">We&apos;re always on air for you</p>
       </motion.div>
 
       <motion.div

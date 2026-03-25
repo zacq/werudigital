@@ -56,7 +56,7 @@ function PresenterCard({ presenter, index }: { presenter: typeof presenters[0]; 
 
 export default function Presenters() {
   return (
-    <section className="relative z-10 pb-12" style={{ background: "#1A1A1A" }}>
+    <section className="relative z-10 pb-12" style={{ background: "#0A0A0A" }}>
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}

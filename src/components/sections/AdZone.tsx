@@ -43,7 +43,7 @@ export default function AdZone() {
   const ad = ads[current];
 
   return (
-    <section className="relative z-10 px-5 pb-12" style={{ background: "#111111" }}>
+    <section className="relative z-10 px-5 pb-12" style={{ background: "#0A0A0A" }}>
       <div className="flex items-center justify-between mb-5 max-w-sm mx-auto">
         <div>
           <h2 className="text-xl font-bold text-white/90">Sponsored</h2>
