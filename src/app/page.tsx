@@ -2,7 +2,6 @@ import AnimatedBackground from "@/components/ui/AnimatedBackground";
 import Hero from "@/components/sections/Hero";
 import QuickAccess from "@/components/sections/QuickAccess";
 import LiveContent from "@/components/sections/LiveContent";
-import Presenters from "@/components/sections/Presenters";
 import ContactHub from "@/components/sections/ContactHub";
 import AdZone from "@/components/sections/AdZone";
 import Footer from "@/components/sections/Footer";
@@ -22,7 +21,6 @@ export default function Home() {
         <Hero />
         <QuickAccess />
         <LiveContent />
-        <Presenters />
         <ContactHub />
         <AdZone />
         <Footer />

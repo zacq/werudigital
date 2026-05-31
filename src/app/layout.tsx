@@ -19,6 +19,7 @@ const nunito = Nunito({
   weight: ["800"],
 });
 
+
 export const metadata: Metadata = {
   title: "Weru TV & Radio — Watch. Listen. Connect.",
   description: "Your gateway to Weru Digital — live TV, radio, and more.",

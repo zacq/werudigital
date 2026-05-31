@@ -1,10 +1,29 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import GlassButton from "@/components/ui/GlassButton";
 import SpinningGlobe from "@/components/ui/SpinningGlobe";
 
+const slides = [
+  { emoji: "📺", text: "Kenya's #1 broadcast experience — now right in your hands." },
+  { emoji: "🎁", text: "Subscribe to Weru TV & enter our weekly prize draw — winners announced live on air!" },
+  { emoji: "🛍️", text: "Our 10th Anniversary merch drop is coming — join the waitlist & be first to shop." },
+  { emoji: "🎵", text: "Follow us on TikTok & react to our videos — top fans get featured FREE on werudigital.co.ke!" },
+  { emoji: "📸", text: "Tag @WeruDigital on Instagram — most-liked post wins Weru goodies every month." },
+  { emoji: "▶️", text: "Subscribe on YouTube & comment — top engagers unlock exclusive Weru rewards." },
+  { emoji: "⭐", text: "Watch. Shop. Share. Get rewarded — only on Weru Digital." },
+];
+
 export default function Hero() {
+  const [index, setIndex] = useState(0);
+
+  // Auto-advance every 4 seconds
+  useEffect(() => {
+    const id = setInterval(() => setIndex(i => (i + 1) % slides.length), 4000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-5 pt-10 pb-8 text-center"
       style={{ background: "linear-gradient(160deg, #6B0A0A 0%, #7A1010 45%, #3a0808 100%)" }}
@@ -91,15 +110,61 @@ export default function Hero() {
         </h1>
       </motion.div>
 
-      <motion.p
+      {/* Sales carousel */}
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
-        className="text-white text-base mb-10 max-w-xs leading-relaxed"
-        style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+        className="mb-10 max-w-xs w-full"
       >
-        Kenya&apos;s premier broadcast experience — now in your hands.
-      </motion.p>
+        {/* Slide text */}
+        <div className="relative h-20 flex items-center justify-center overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={index}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.38, ease: "easeOut" }}
+              className="absolute text-center px-1 leading-snug"
+              style={{
+                fontFamily: "var(--font-nunito), 'Nunito', sans-serif",
+                fontWeight: 800,
+                fontSize: "1.05rem",
+                background: "linear-gradient(180deg, #FFFFFF 0%, #FFE78A 45%, #FFC93C 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.55))",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              <span style={{ WebkitTextFillColor: "initial", filter: "none" }} className="mr-1.5">
+                {slides[index].emoji}
+              </span>
+              {slides[index].text}
+            </motion.p>
+          </AnimatePresence>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="flex items-center justify-center gap-1.5 mt-3">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              className="rounded-full transition-all"
+              style={{
+                width:  i === index ? "18px" : "6px",
+                height: "6px",
+                background: i === index ? "#f97d00" : "rgba(255,255,255,0.25)",
+                border: "none",
+                cursor: "pointer",
+              }}
+            />
+          ))}
+        </div>
+      </motion.div>
 
       {/* CTA Buttons */}
       <motion.div
