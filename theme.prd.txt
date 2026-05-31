@@ -1,0 +1,338 @@
+================================================================================
+  WERU TV & RADIO — BRAND THEME CONFIGURATION
+  For use across all Weru media web properties
+================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. COLOUR PALETTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  PRIMARY BRAND COLOURS
+  ─────────────────────
+  Orange (primary CTA / accent)    #f97d00      rgb(249, 125, 0)
+  Red (alerts / LIVE badges)       #C8102E      rgb(200, 16, 46)
+  Dark Red (hero / footer bg)      #7A1010      rgb(122, 16, 16)
+  Deeper Red (carousel slides)     #6B0A0A      rgb(107, 10, 10)
+  Gold (highlights / active)       #FACC15      rgb(250, 204, 21)
+
+  NEUTRAL SCALE
+  ─────────────
+  True Black (page body)           #0A0A0A      rgb(10, 10, 10)
+  Near Black (card bg / sections)  #111111      rgb(17, 17, 17)
+  Dark Surface                     #1A1A1A      rgb(26, 26, 26)
+  White (text on dark)             #FFFFFF      rgb(255, 255, 255)
+  Off-White (form bg)              #F5F5F5      rgb(245, 245, 245)
+
+  TEXT ON DARK BACKGROUNDS
+  ────────────────────────
+  Primary text                     rgba(255,255,255, 1.00)
+  Secondary text                   rgba(255,255,255, 0.70)
+  Muted text                       rgba(255,255,255, 0.55)
+  Subtle text                      rgba(255,255,255, 0.35)
+  Placeholder text                 rgba(255,255,255, 0.45)
+
+  TEXT ON LIGHT BACKGROUNDS
+  ─────────────────────────
+  Primary text                     #111111
+  Secondary text                   #666666
+  Muted / fine print               #AAAAAA
+
+  SECTION BACKGROUND MAP
+  ──────────────────────
+  Page body / default              #0A0A0A  (near black)
+  Hero carousel slide A            #6B0A0A  (deeper red)
+  Hero carousel slide B            #7A1010  (dark red)
+  Live stream / dark sections      #111111
+  Headline ticker                  #1A1A1A
+  Advertise section                #111111
+  News grid                        #f97d00  (orange)
+  Partners strip                   #0A0A0A
+  Rate card form                   #FFFFFF  (white — light section)
+  Footer                           #7A1010  (dark red — bookend)
+  Radio section wrapper            #f97d00  (orange)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  2. CSS CUSTOM PROPERTIES  (paste into :root or @theme)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  /* ── Brand colours ─────────────────────────────── */
+  --color-orange:       #f97d00;
+  --color-red:          #C8102E;
+  --color-dark-red:     #7A1010;
+  --color-deeper-red:   #6B0A0A;
+  --color-gold:         #FACC15;
+
+  /* ── Neutral scale ─────────────────────────────── */
+  --color-black:        #0A0A0A;
+  --color-near-black:   #111111;
+  --color-surface:      #1A1A1A;
+  --color-white:        #FFFFFF;
+  --color-off-white:    #F5F5F5;
+
+  /* ── Text alpha ramp (on dark) ─────────────────── */
+  --text-100: rgba(255,255,255,1.00);
+  --text-70:  rgba(255,255,255,0.70);
+  --text-55:  rgba(255,255,255,0.55);
+  --text-45:  rgba(255,255,255,0.45);
+  --text-35:  rgba(255,255,255,0.35);
+
+  /* ── Section backgrounds ───────────────────────── */
+  --bg-page:          #0A0A0A;
+  --bg-hero-a:        #6B0A0A;
+  --bg-hero-b:        #7A1010;
+  --bg-dark:          #111111;
+  --bg-ticker:        #1A1A1A;
+  --bg-light:         #FFFFFF;
+  --bg-radio:         #f97d00;
+  --bg-footer:        #7A1010;
+
+  /* ── Glow shadows ──────────────────────────────── */
+  --glow-orange: 0 0 28px rgba(249,125,0,0.55), 0 4px 16px rgba(0,0,0,0.30);
+  --glow-red:    0 0 24px rgba(200,16,46,0.50),  0 4px 16px rgba(0,0,0,0.30);
+  --glow-gold:   0 0 20px rgba(250,204,21,0.40), 0 4px 16px rgba(0,0,0,0.25);
+
+  /* ── Border radius scale ───────────────────────── */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* ── Font stack ────────────────────────────────── */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               Helvetica, Arial, sans-serif;
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  3. GLASSMORPHISM CLASSES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  /* Standard glass panel */
+  .glass {
+    background: rgba(0,0,0,0.40);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.30);
+  }
+
+  /* Subtle glass (nav items, chips) */
+  .glass-sm {
+    background: rgba(0,0,0,0.28);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  }
+
+  /* Heavy glass (modals, overlays) */
+  .glass-strong {
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.20);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.40);
+  }
+
+  /* Light glass (on coloured backgrounds) */
+  .glass-light {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.20);
+  }
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  4. FORM INPUTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  /* Dark background forms */
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.20);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    backdrop-filter: blur(8px);
+  }
+  .form-input::placeholder { color: rgba(255,255,255,0.45); }
+  .form-input:focus {
+    border-color: rgba(249,125,0,0.70);
+    box-shadow: 0 0 0 3px rgba(249,125,0,0.15);
+  }
+  .form-input.error {
+    border-color: rgba(200,16,46,0.70);
+    box-shadow: 0 0 0 3px rgba(200,16,46,0.15);
+  }
+
+  /* Light background forms */
+  .form-input-light {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #F5F5F5;
+    border: 1.5px solid #DDDDDD;
+    border-radius: 12px;
+    color: #111111;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-input-light::placeholder { color: #666666; }
+  .form-input-light:focus {
+    border-color: #f97d00;
+    box-shadow: 0 0 0 3px rgba(249,125,0,0.12);
+    background: #ffffff;
+  }
+  .form-input-light.error {
+    border-color: #C8102E;
+    box-shadow: 0 0 0 3px rgba(200,16,46,0.10);
+  }
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  5. BUTTON PATTERNS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  /* Primary CTA — Orange */
+  background: #f97d00;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(249,125,0,0.35);
+
+  /* Secondary CTA — Red */
+  background: #C8102E;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(200,16,46,0.35);
+
+  /* Ghost on dark */
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.30);
+  color: #ffffff;
+
+  /* Ghost orange outline */
+  background: rgba(249,125,0,0.08);
+  border: 1.5px solid #f97d00;
+  color: #f97d00;
+
+  /* LIVE pill (navbar) */
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #ffffff;
+  /* with pulsing orange dot: background #f97d00, animation live-pulse 1.2s */
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  6. NAVBAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Height:               64px  (h-16)
+  Background at top:    rgba(0,0,0,0.25) + backdrop-filter: blur(20px)
+  Background scrolled:  rgba(0,0,0,0.70) + backdrop-filter: blur(20px)
+  Border bottom:        1px solid rgba(255,255,255,0.08)
+  Nav link colour:      rgba(255,255,255,0.80)
+  Nav link active:      #f97d00
+  Behaviour:            Hide on scroll-down > 6px; show on scroll-up / at top
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  7. TAILWIND V4 CONFIG  (globals.css)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  @import "tailwindcss";
+
+  @theme inline {
+    --color-weru-orange:      #f97d00;
+    --color-weru-red:         #C8102E;
+    --color-weru-dark-red:    #7A1010;
+    --color-weru-deeper-red:  #6B0A0A;
+    --color-weru-gold:        #FACC15;
+    --color-weru-black:       #0A0A0A;
+  }
+
+  Usage in JSX/HTML:
+    bg-weru-orange    text-weru-red    border-weru-gold   etc.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  8. TAILWIND V3 CONFIG  (tailwind.config.js)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  module.exports = {
+    theme: {
+      extend: {
+        colors: {
+          weru: {
+            orange:     "#f97d00",
+            red:        "#C8102E",
+            "dark-red": "#7A1010",
+            "deep-red": "#6B0A0A",
+            gold:       "#FACC15",
+            black:      "#0A0A0A",
+          },
+        },
+        fontFamily: {
+          sans: ['-apple-system','BlinkMacSystemFont','"Segoe UI"',
+                 'Roboto','Helvetica','Arial','sans-serif'],
+        },
+        boxShadow: {
+          "glow-orange": "0 0 28px rgba(249,125,0,0.55), 0 4px 16px rgba(0,0,0,0.30)",
+          "glow-red":    "0 0 24px rgba(200,16,46,0.50),  0 4px 16px rgba(0,0,0,0.30)",
+          "glow-gold":   "0 0 20px rgba(250,204,21,0.40), 0 4px 16px rgba(0,0,0,0.25)",
+        },
+        borderRadius: {
+          DEFAULT: "12px",
+          xl:      "16px",
+          "2xl":   "20px",
+        },
+      },
+    },
+  };
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  9. ANIMATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  @keyframes live-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.25; }
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  @keyframes equalizer {
+    0%, 100% { height: 4px; }
+    25%       { height: 18px; }
+    50%       { height: 8px; }
+    75%       { height: 22px; }
+  }
+
+  .live-dot   { animation: live-pulse 1.2s ease-in-out infinite; }
+  .ticker-track { animation: ticker 35s linear infinite; }
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  10. QUICK-COPY HEX SWATCHES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  #f97d00   Orange         (primary)
+  #C8102E   Red            (alerts / LIVE)
+  #7A1010   Dark Red       (hero / footer)
+  #6B0A0A   Deeper Red     (carousel alternate)
+  #FACC15   Gold           (highlights)
+  #0A0A0A   Black          (page bg)
+  #111111   Near Black     (card / section bg)
+  #1A1A1A   Dark Surface   (ticker bg)
+  #FFFFFF   White          (text / light form bg)
+  #F5F5F5   Off-White      (input field bg)
+
+================================================================================

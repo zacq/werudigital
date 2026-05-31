@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import GlassButton from "@/components/ui/GlassButton";
+import SpinningGlobe from "@/components/ui/SpinningGlobe";
 
 export default function Hero() {
   return (
@@ -15,11 +16,22 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        {/* Logo placeholder — swap with <Image> when you have the asset */}
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#f97d00] to-[#C8102E] flex items-center justify-center font-bold text-white text-sm shadow-lg">
-          W
-        </div>
-        <span className="text-white font-bold text-lg tracking-wide">Weru Digital</span>
+        <SpinningGlobe />
+        <span className="font-bold text-lg tracking-wide" style={{ fontFamily: "var(--font-nunito), 'Nunito', sans-serif", fontWeight: 800, letterSpacing: "-0.02em" }}>
+          <span style={{
+            background: "linear-gradient(180deg, #FFE78A 0%, #FFC93C 20%, #F5A300 45%, #D87A00 75%, #A94F00 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            filter: "drop-shadow(0 1px 3px rgba(0,0,0,0.4))",
+          }}>Weru </span><span style={{
+            background: "linear-gradient(180deg, #FFE78A 0%, #FFC93C 20%, #F5A300 45%, #D87A00 75%, #A94F00 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            filter: "drop-shadow(0 1px 3px rgba(0,0,0,0.4))",
+          }}>Digital</span>
+        </span>
       </motion.div>
 
       {/* ON AIR badge */}
