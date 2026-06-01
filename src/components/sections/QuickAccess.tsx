@@ -26,16 +26,28 @@ const itemVariants = {
 
 export default function QuickAccess() {
   return (
-    <section className="relative z-10 px-5 pt-10 pb-12" style={{ background: "#f97d00" }}>
+    <section
+      className="relative z-10 px-5 pt-12 pb-14 overflow-hidden"
+      style={{ background: "rgba(14,5,0,0.82)", backdropFilter: "blur(2px)" }}
+    >
+      {/* Ambient orange glow */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249,125,0,0.18) 0%, transparent 70%)",
+      }}/>
+      {/* Bottom fade into next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none" style={{
+        background: "linear-gradient(to bottom, transparent, rgba(8,3,0,0.6))",
+      }}/>
+
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.5 }}
-        className="mb-6"
+        className="mb-7 relative"
       >
-        <h2 className="text-xl font-bold text-[#111111] text-center">Quick Access</h2>
-        <p className="text-xs text-[#111111]/70 text-center mt-1">Tap to connect instantly</p>
+        <h2 className="text-xl font-bold text-white text-center balance">Quick Access</h2>
+        <p className="text-xs text-white/50 text-center mt-1">Tap to connect instantly</p>
       </motion.div>
 
       <motion.div

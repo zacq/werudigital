@@ -12,34 +12,47 @@ const socials = [
 export default function Footer() {
   return (
     <motion.footer
-      className="relative z-10 px-5 pb-8 pt-4"
-      style={{ background: "#7A1010" }}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      className="relative z-10 px-5 pb-10 pt-6 overflow-hidden"
+      style={{ background: "rgba(12,2,2,0.92)", backdropFilter: "blur(2px)" }}
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
+      {/* Deep red ambient glow */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "radial-gradient(ellipse 70% 60% at 50% 100%, rgba(122,16,16,0.30) 0%, transparent 70%)",
+      }}/>
+
       <div
-        className="max-w-sm mx-auto px-5 py-4 rounded-2xl flex flex-col items-center gap-4"
+        className="max-w-sm mx-auto px-5 py-5 rounded-2xl flex flex-col items-center gap-4 relative"
         style={{
-          background: "rgba(0,0,0,0.4)",
-          backdropFilter: "blur(16px)",
-          border: "1px solid rgba(255,255,255,0.15)",
+          background: "rgba(0,0,0,0.45)",
+          backdropFilter: "blur(20px)",
+          border: "1px solid rgba(255,255,255,0.10)",
+          boxShadow: "0 0 0 1px rgba(200,16,46,0.12), inset 0 1px 0 rgba(255,255,255,0.08), 0 16px 40px rgba(0,0,0,0.50)",
         }}
       >
-        {/* Social icons */}
-        <div className="flex items-center gap-4">
-          {socials.map((s) => (
-            <a
+        {/* Social icons — staggered entry */}
+        <div className="flex items-center gap-3">
+          {socials.map((s, i) => (
+            <motion.a
               key={s.label}
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="w-8 h-8 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/15 transition-all duration-200 text-sm font-bold"
+              className="w-9 h-9 rounded-full flex items-center justify-center text-white/60 text-sm font-bold"
+              style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.07, duration: 0.35 }}
+              whileHover={{ scale: 1.15, background: "rgba(249,125,0,0.20)", borderColor: "rgba(249,125,0,0.40)" }}
+              whileTap={{ scale: 0.92 }}
             >
               {s.icon}
-            </a>
+            </motion.a>
           ))}
         </div>
 

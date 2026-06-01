@@ -6,12 +6,16 @@ import ContactHub from "@/components/sections/ContactHub";
 import AdZone from "@/components/sections/AdZone";
 import Footer from "@/components/sections/Footer";
 import CartIcon from "@/components/ui/CartIcon";
+import LeadCaptureModal from "@/components/ui/LeadCaptureModal";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen">
       {/* Layer 0 — Animated background (fixed, full screen) */}
       <AnimatedBackground />
+
+      {/* Lead capture popup — auto-shows after 1.5s */}
+      <LeadCaptureModal />
 
       {/* Cart icon — fixed top-right */}
       <CartIcon />

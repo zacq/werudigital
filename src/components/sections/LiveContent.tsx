@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
 // Launch date — adjust to Weru TV's actual 10th anniversary date
-const LAUNCH_DATE = new Date("2026-07-01T10:00:00+03:00");
+const LAUNCH_DATE = new Date("2026-06-07T10:00:00+03:00");
 
 function useCountdown(target: Date) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -39,7 +39,18 @@ export default function LiveContent() {
   const { days, hours, minutes, seconds } = useCountdown(LAUNCH_DATE);
 
   return (
-    <section className="relative z-10 pb-14 px-5 pt-10" style={{ background: "#111111" }}>
+    <section
+      className="relative z-10 pb-14 px-5 pt-10 overflow-hidden"
+      style={{ background: "rgba(10,4,0,0.88)", backdropFilter: "blur(2px)" }}
+    >
+      {/* Deep red ambient glow top-right */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "radial-gradient(ellipse 60% 50% at 90% 10%, rgba(200,16,46,0.10) 0%, transparent 70%)",
+      }}/>
+      {/* Gold ambient glow center */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "radial-gradient(ellipse 40% 30% at 50% 40%, rgba(245,163,0,0.06) 0%, transparent 70%)",
+      }}/>
 
       {/* ── Section header ─────────────────────────────────────────── */}
       <motion.div
@@ -66,8 +77,15 @@ export default function LiveContent() {
           boxShadow: "0 0 50px rgba(200,16,46,0.12), inset 0 1px rgba(255,255,255,0.04)",
         }}
       >
-        {/* Gold accent bar */}
-        <div style={{ height: 3, background: "linear-gradient(90deg, transparent, #F5A300, #FFE78A, #F5A300, transparent)" }} />
+        {/* Pulsating gold accent bar */}
+        <div
+          className="gold-pulse"
+          style={{
+            height: 3,
+            background: "linear-gradient(90deg, transparent, #F5A300, #FFE78A, #F5A300, transparent)",
+            borderRadius: 2,
+          }}
+        />
 
         <div className="p-6 text-center">
 
@@ -119,7 +137,7 @@ export default function LiveContent() {
                   transition={{ duration: 1, repeat: Infinity }}
                 >
                   <span
-                    className="text-2xl font-black tabular-nums"
+                    className="text-2xl font-black tabular"
                     style={{ background: GOLD, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
                   >
                     {String(val).padStart(2, "0")}
@@ -190,7 +208,7 @@ export default function LiveContent() {
 
       {/* ── Footer note ───────────────────────────────────────────── */}
       <motion.p
-        className="text-center text-[10px] text-white/20 mt-5"
+        className="text-center text-[10px] text-white/20 mt-5 relative"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

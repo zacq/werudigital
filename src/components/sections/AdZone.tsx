@@ -43,10 +43,16 @@ export default function AdZone() {
   const ad = ads[current];
 
   return (
-    <section className="relative z-10 px-5 pb-12" style={{ background: "#0A0A0A" }}>
-      <div className="flex items-center justify-between mb-5 max-w-sm mx-auto">
+    <section
+      className="relative z-10 px-5 pb-12 pt-10 overflow-hidden"
+      style={{ background: "rgba(8,3,0,0.90)", backdropFilter: "blur(2px)" }}
+    >
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(249,125,0,0.07) 0%, transparent 70%)",
+      }}/>
+      <div className="flex items-center justify-between mb-5 max-w-sm mx-auto relative">
         <div>
-          <h2 className="text-xl font-bold text-white/90">Sponsored</h2>
+          <h2 className="text-xl font-bold text-white/90 balance">Sponsored</h2>
           <p className="text-xs text-white/40 mt-1">Partner content</p>
         </div>
         <div className="flex gap-1.5">
@@ -72,9 +78,9 @@ export default function AdZone() {
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="glass absolute inset-0 p-5 flex flex-col justify-between"
             style={{
-              background: "rgba(255,255,255,0.07)",
-              border: `1px solid ${ad.accent}44`,
-              boxShadow: `0 0 24px ${ad.accent}22, 0 8px 32px rgba(0,0,0,0.25)`,
+              background: "rgba(0,0,0,0.42)",
+              border: `1px solid ${ad.accent}33`,
+              boxShadow: `0 0 32px ${ad.accent}18, 0 12px 40px rgba(0,0,0,0.40), inset 0 1px 0 rgba(255,255,255,0.10)`,
             }}
           >
             <div>

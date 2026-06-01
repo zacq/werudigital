@@ -19,9 +19,9 @@
   --foreground: #ffffff;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--background);
@@ -30,45 +30,57 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Glass classes (dark background variants) ─── */
+/* ── True glassmorphism — inner border + edge refraction shadow ── */
 .glass {
-  background: rgba(0, 0, 0, 0.40);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.30);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.20);
   will-change: transform;
 }
 
 .glass-sm {
-  background: rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   will-change: transform;
 }
 
 .glass-strong {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 24px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.40);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.50),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25);
   will-change: transform;
 }
 
-/* Light glass — for use on coloured (orange/red) section backgrounds */
-.glass-light {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+/* Warm glass — for orange/amber ambient sections */
+.glass-warm {
+  background: rgba(249, 125, 0, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(249, 125, 0, 0.18);
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.20);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.30),
+    inset 0 1px 0 rgba(255, 200, 100, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.18);
   will-change: transform;
 }
 
@@ -92,8 +104,27 @@ body {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+@keyframes gold-pulse {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(245, 163, 0, 0.5), 0 0 12px rgba(245, 163, 0, 0.25);
+    opacity: 0.75;
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(255, 231, 138, 0.9), 0 0 36px rgba(245, 163, 0, 0.55), 0 0 60px rgba(245, 163, 0, 0.20);
+    opacity: 1;
+  }
+}
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10%       { transform: translate(-2%, -3%); }
+  30%       { transform: translate(3%, 2%); }
+  50%       { transform: translate(-1%, 4%); }
+  70%       { transform: translate(4%, -1%); }
+  90%       { transform: translate(-3%, 1%); }
+}
 
-.live-dot { animation: live-pulse 1.2s ease-in-out infinite; }
+.live-dot    { animation: live-pulse 1.2s ease-in-out infinite; }
+.gold-pulse  { animation: gold-pulse 2.2s ease-in-out infinite; }
 
 /* ── Scrollbar ────────────────────────────────── */
 ::-webkit-scrollbar { height: 4px; width: 4px; }
@@ -103,7 +134,8 @@ body {
   border-radius: 2px;
 }
 .no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Utility ──────────────────────────────────── */
+.balance { text-wrap: balance; }
+.tabular  { font-variant-numeric: tabular-nums; }

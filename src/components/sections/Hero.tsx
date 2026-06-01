@@ -25,7 +25,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-5 pt-10 pb-8 text-center"
+    <section className="relative z-10 flex flex-col items-center justify-center min-h-dvh px-5 pt-10 pb-8 text-center"
       style={{ background: "linear-gradient(160deg, #6B0A0A 0%, #7A1010 45%, #3a0808 100%)" }}
     >
       {/* Glass header strip */}
