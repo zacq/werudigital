@@ -9,7 +9,7 @@ const GOLD  = '#F4A020';
 const CREAM = '#FFF5E0';
 const WHITE = '#FFFFFF';
 
-const URL     = 'https://werudigital.co.ke/';
+const URL     = 'https://connect.werudigital.co.ke/';
 const SIZE    = 900;
 const MARGIN  = 54;
 const BADGE_R = 108;  // large enough to showcase the full landscape logo
