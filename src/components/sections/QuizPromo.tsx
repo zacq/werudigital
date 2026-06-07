@@ -46,8 +46,8 @@ function cardVariants(type: "explode" | "implode", delay: number) {
     viewport: { once: true, margin: "-40px" },
     transition:
       type === "explode"
-        ? { type: "spring", stiffness: 500, damping: 18, delay }
-        : { type: "spring", stiffness: 280, damping: 24, delay },
+        ? { type: "spring" as const, stiffness: 500, damping: 18, delay }
+        : { type: "spring" as const, stiffness: 280, damping: 24, delay },
   };
 }
 
