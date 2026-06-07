@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const socials = [
-  { icon: "▶",  label: "YouTube",   href: "https://youtube.com/@WeruTVFM" },
+  { icon: "▶",  label: "YouTube",   href: "https://youtube.com/@werutvfm3411" },
   { icon: "f",  label: "Facebook",  href: "https://facebook.com/WeruTV" },
   { icon: "✖",  label: "X",         href: "https://x.com/WeruTV" },
   { icon: "♪",  label: "TikTok",    href: "https://tiktok.com/@Werutv.fm96.4" },

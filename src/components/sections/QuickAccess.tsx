@@ -5,7 +5,7 @@ import GlassTile from "@/components/ui/GlassTile";
 
 const tiles = [
   { icon: "🌐", label: "Website",    href: "https://werudigital.co.ke" },
-  { icon: "▶️", label: "YouTube",   href: "https://youtube.com/@WeruTVFM" },
+  { icon: "▶️", label: "YouTube",   href: "https://youtube.com/@werutvfm3411" },
   { icon: "🎵", label: "TikTok",    href: "https://tiktok.com/@Werutv.fm96.4" },
   { icon: "👍", label: "Facebook",  href: "https://facebook.com/WeruTV" },
   { icon: "📸", label: "Instagram", href: "https://instagram.com/werutv" },
