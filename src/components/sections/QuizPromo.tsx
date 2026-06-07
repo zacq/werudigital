@@ -176,7 +176,7 @@ export default function QuizPromo() {
                 "0 0 14px rgba(245,163,0,0.25), 0 4px 20px rgba(0,0,0,0.40)",
               ],
             },
-            transition: { duration: 2.4, repeat: Infinity, ease: "easeInOut" },
+            transition: { duration: 2.4, repeat: Infinity, ease: "easeInOut" as const },
             ...(isActive && { whileHover: { scale: 1.03, y: -3 }, whileTap: { scale: 0.97 } }),
           };
 
