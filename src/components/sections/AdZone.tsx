@@ -9,7 +9,7 @@ const ads = [
     brand: "Your Brand Here",
     tagline: "Reach thousands of engaged viewers daily",
     cta: "Advertise With Us",
-    href: "mailto:ads@werudigital.co.ke",
+    href: "mailto:weruofficial@gmail.com",
     accent: "#f97d00",
   },
   {
@@ -17,7 +17,7 @@ const ads = [
     brand: "Partner Spotlight",
     tagline: "Connect with Kenya's fastest-growing audience",
     cta: "Learn More",
-    href: "mailto:ads@werudigital.co.ke",
+    href: "mailto:weruofficial@gmail.com",
     accent: "#f97d00",
   },
   {
@@ -25,7 +25,7 @@ const ads = [
     brand: "Advertise on Weru",
     tagline: "TV · Radio · Digital — all in one package",
     cta: "Get in Touch",
-    href: "mailto:ads@werudigital.co.ke",
+    href: "mailto:weruofficial@gmail.com",
     accent: "#C8102E",
   },
 ];

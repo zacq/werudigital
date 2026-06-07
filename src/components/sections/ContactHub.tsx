@@ -7,7 +7,7 @@ const actions = [
   { icon: "📞", label: "Call Hotline", href: "tel:+254707065000",                         hint: "0707 065 000"          },
   { icon: "📱", label: "Mobile",       href: "tel:+254700117026",                         hint: "0700 117 026"          },
   { icon: "💬", label: "WhatsApp",     href: "https://wa.me/254793004303?text=Welcome%20to%20WeruTv", hint: "+254 793 004 303"      },
-  { icon: "✉️", label: "Email Us",     href: "mailto:info@werudigital.co.ke",             hint: "info@werudigital.co.ke"},
+  { icon: "✉️", label: "Email Us",     href: "mailto:weruofficial@gmail.com",             hint: "weruofficial@gmail.com" },
   { icon: "📍", label: "Find Us",      href: "https://maps.google.com/?q=Weru+TV+Kenya", hint: "Get directions"        },
 ];
 
