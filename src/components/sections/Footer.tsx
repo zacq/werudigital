@@ -3,10 +3,11 @@
 import { motion } from "framer-motion";
 
 const socials = [
-  { icon: "▶", label: "YouTube", href: "https://youtube.com/@werutv" },
-  { icon: "f", label: "Facebook", href: "https://facebook.com/werutv" },
-  { icon: "✖", label: "X", href: "https://x.com/werutv" },
-  { icon: "♪", label: "TikTok", href: "https://tiktok.com/@werutv" },
+  { icon: "▶",  label: "YouTube",   href: "https://youtube.com/@WeruTVFM" },
+  { icon: "f",  label: "Facebook",  href: "https://facebook.com/WeruTV" },
+  { icon: "✖",  label: "X",         href: "https://x.com/WeruTV" },
+  { icon: "♪",  label: "TikTok",    href: "https://tiktok.com/@Werutv.fm96.4" },
+  { icon: "📸", label: "Instagram", href: "https://instagram.com/werutv" },
 ];
 
 export default function Footer() {

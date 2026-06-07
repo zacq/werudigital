@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import GlassButton from "@/components/ui/GlassButton";
-import SpinningGlobe from "@/components/ui/SpinningGlobe";
 
 const slides = [
   { emoji: "📺", text: "Kenya's #1 broadcast experience — now right in your hands." },
@@ -13,6 +12,14 @@ const slides = [
   { emoji: "📸", text: "Tag @WeruDigital on Instagram — most-liked post wins Weru goodies every month." },
   { emoji: "▶️", text: "Subscribe on YouTube & comment — top engagers unlock exclusive Weru rewards." },
   { emoji: "⭐", text: "Watch. Shop. Share. Get rewarded — only on Weru Digital." },
+];
+
+const channels = [
+  "Zuku CH 39",
+  "DStv CH 368",
+  "Startimes CH 440",
+  "Azam Channel 342",
+  "Pang & Signet",
 ];
 
 export default function Hero() {
@@ -28,29 +35,25 @@ export default function Hero() {
     <section className="relative z-10 flex flex-col items-center justify-center min-h-dvh px-5 pt-10 pb-8 text-center"
       style={{ background: "linear-gradient(160deg, #6B0A0A 0%, #7A1010 45%, #3a0808 100%)" }}
     >
-      {/* Glass header strip */}
+      {/* Logo header */}
       <motion.div
-        className="glass-sm px-6 py-4 mb-8 flex items-center gap-3"
+        className="mb-8"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
+        style={{
+          background: "white",
+          borderRadius: "16px",
+          padding: "10px 24px",
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%)",
+          maskImage: "linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%)",
+        }}
       >
-        <SpinningGlobe />
-        <span className="font-bold text-lg tracking-wide" style={{ fontFamily: "var(--font-nunito), 'Nunito', sans-serif", fontWeight: 800, letterSpacing: "-0.02em" }}>
-          <span style={{
-            background: "linear-gradient(180deg, #FFE78A 0%, #FFC93C 20%, #F5A300 45%, #D87A00 75%, #A94F00 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            filter: "drop-shadow(0 1px 3px rgba(0,0,0,0.4))",
-          }}>Weru </span><span style={{
-            background: "linear-gradient(180deg, #FFE78A 0%, #FFC93C 20%, #F5A300 45%, #D87A00 75%, #A94F00 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            filter: "drop-shadow(0 1px 3px rgba(0,0,0,0.4))",
-          }}>Digital</span>
-        </span>
+        <img
+          src="/images/weru-digital-logo-final.jpeg"
+          alt="Weru Digital"
+          style={{ height: "46px", width: "auto", objectFit: "contain", display: "block" }}
+        />
       </motion.div>
 
       {/* ON AIR badge */}
@@ -174,7 +177,7 @@ export default function Hero() {
         className="flex flex-col sm:flex-row gap-4 w-full max-w-xs sm:max-w-sm"
       >
         <GlassButton
-          href="https://werudigital.co.ke/watch"
+          href="https://werudigital.co.ke/tv#tv-schedule"
           variant="primary"
           icon="📺"
           fullWidth
@@ -199,13 +202,48 @@ export default function Hero() {
         className="w-full max-w-xs sm:max-w-sm mt-3"
       >
         <GlassButton
-          href="https://werudigital.co.ke/rate-card"
+          href="https://werudigital.co.ke/"
           variant="pill"
           icon="📋"
           fullWidth
         >
           Request Rate Card
         </GlassButton>
+      </motion.div>
+
+      {/* Channel ticker */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9, duration: 0.5 }}
+        className="w-full max-w-xs sm:max-w-sm mt-4 overflow-hidden rounded-xl"
+        style={{
+          background: "rgba(0,0,0,0.40)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          boxShadow: "0 2px 12px rgba(0,0,0,0.35)",
+        }}
+      >
+        <div className="flex items-center">
+          <div
+            className="flex-shrink-0 px-2.5 py-2 text-[9px] font-bold tracking-widest uppercase text-white"
+            style={{
+              background: "rgba(200,16,46,0.75)",
+              borderRight: "1px solid rgba(255,255,255,0.10)",
+            }}
+          >
+            WATCH
+          </div>
+          <div className="overflow-hidden flex-1">
+            <div className="ticker-ltr flex whitespace-nowrap">
+              {[...channels, ...channels].map((ch, i) => (
+                <span key={i} className="inline-flex items-center py-2 px-3 text-[11px] font-semibold text-white/80">
+                  📺 {ch}
+                  <span className="ml-3 text-white/25">·</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </motion.div>
 
       {/* Scroll hint */}

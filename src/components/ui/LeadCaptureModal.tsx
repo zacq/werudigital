@@ -58,14 +58,21 @@ export default function LeadCaptureModal() {
 
     setStatus("loading");
 
-    // Phase 3 will wire this to /api/subscribe
-    // For now simulate a 900 ms network call
-    await new Promise(r => setTimeout(r, 900));
+    const res = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, phone, interests }),
+    });
 
-    // Stub: always succeeds locally — replace with real fetch in Phase 3
-    const isDuplicate = false; // will come from API response
+    const data = await res.json();
 
-    if (isDuplicate) {
+    if (!res.ok) {
+      setStatus("idle");
+      setErrors({ phone: "Something went wrong. Please try again." });
+      return;
+    }
+
+    if (data.duplicate) {
       setStatus("duplicate");
       return;
     }
@@ -188,7 +195,13 @@ export default function LeadCaptureModal() {
                       />
                       {errors.phone && <p className="text-[11px] text-red-400 mt-1 pl-1">{errors.phone}</p>}
                       {status === "duplicate" && (
-                        <p className="text-[11px] text-amber-400 mt-1 pl-1">✓ This number is already subscribed.</p>
+                        <motion.p
+                          initial={{ opacity: 0, y: -4 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="text-[11px] text-amber-400 mt-2 pl-1 leading-relaxed"
+                        >
+                          ⚠️ This number is already registered. Double submission &amp; wrong details will lead to <strong>disqualification</strong>.
+                        </motion.p>
                       )}
                     </div>
 
@@ -222,21 +235,22 @@ export default function LeadCaptureModal() {
                     {/* Submit */}
                     <motion.button
                       type="submit"
-                      disabled={status === "loading"}
+                      disabled={status === "loading" || status === "duplicate"}
                       className="w-full py-3.5 rounded-2xl font-bold text-sm mb-3"
                       style={{
-                        background: status === "loading"
-                          ? "rgba(245,163,0,0.5)"
-                          : "linear-gradient(135deg, #F5A300 0%, #D87A00 100%)",
-                        color: "#1a0404",
+                        background:
+                          status === "loading" || status === "duplicate"
+                            ? "rgba(245,163,0,0.35)"
+                            : "linear-gradient(135deg, #F5A300 0%, #D87A00 100%)",
+                        color: status === "duplicate" ? "rgba(255,255,255,0.35)" : "#1a0404",
                         boxShadow: "0 4px 18px rgba(245,163,0,0.30)",
                         fontFamily: "var(--font-nunito), 'Nunito', sans-serif",
                         fontWeight: 800,
-                        cursor: status === "loading" ? "not-allowed" : "pointer",
+                        cursor: status === "loading" || status === "duplicate" ? "not-allowed" : "pointer",
                       }}
-                      whileTap={{ scale: status === "loading" ? 1 : 0.97 }}
+                      whileTap={{ scale: status === "loading" || status === "duplicate" ? 1 : 0.97 }}
                     >
-                      {status === "loading" ? "Subscribing…" : "Subscribe — It's Free"}
+                      {status === "loading" ? "Subscribing…" : status === "duplicate" ? "Already Registered" : "Subscribe — It's Free"}
                     </motion.button>
 
                     {/* Dismiss */}

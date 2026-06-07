@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import GlassButton from "@/components/ui/GlassButton";
 
 const actions = [
-  { icon: "📞", label: "Call Hotline", href: "tel:+254700000000",                         hint: "+254 700 000 000"       },
-  { icon: "💬", label: "WhatsApp",     href: "https://wa.me/254700000000",                hint: "Chat with us"          },
+  { icon: "📞", label: "Call Hotline", href: "tel:+254707065000",                         hint: "0707 065 000"          },
+  { icon: "📱", label: "Mobile",       href: "tel:+254700117026",                         hint: "0700 117 026"          },
+  { icon: "💬", label: "WhatsApp",     href: "https://wa.me/254793004303?text=Welcome%20to%20WeruTv", hint: "+254 793 004 303"      },
   { icon: "✉️", label: "Email Us",     href: "mailto:info@werudigital.co.ke",             hint: "info@werudigital.co.ke"},
   { icon: "📍", label: "Find Us",      href: "https://maps.google.com/?q=Weru+TV+Kenya", hint: "Get directions"        },
 ];

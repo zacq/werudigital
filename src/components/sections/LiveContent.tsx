@@ -150,7 +150,7 @@ export default function LiveContent() {
 
           {/* ── Waitlist CTA ──────────────────────────────────────── */}
           <motion.a
-            href="https://wa.me/254700000000?text=Hi%20Weru%20Digital!%20I%20want%20to%20join%20the%2010th%20Anniversary%20Shop%20waitlist%20%F0%9F%8E%89"
+            href="https://wa.me/254793004303?text=Hi%20Weru%20Digital!%20I%20want%20to%20join%20the%2010th%20Anniversary%20Shop%20waitlist%20%F0%9F%8E%89"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-sm mb-2"

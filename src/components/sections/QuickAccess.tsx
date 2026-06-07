@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import GlassTile from "@/components/ui/GlassTile";
 
 const tiles = [
-  { icon: "🌐", label: "Website", href: "https://werudigital.co.ke" },
-  { icon: "▶️", label: "YouTube", href: "https://youtube.com/@werutv" },
-  { icon: "🎵", label: "TikTok", href: "https://tiktok.com/@werutv" },
-  { icon: "👍", label: "Facebook", href: "https://facebook.com/werutv" },
-  { icon: "✖️", label: "X (Twitter)", href: "https://x.com/werutv" },
-  { icon: "📍", label: "Find Us", href: "https://maps.google.com/?q=Weru+TV+Kenya" },
+  { icon: "🌐", label: "Website",    href: "https://werudigital.co.ke" },
+  { icon: "▶️", label: "YouTube",   href: "https://youtube.com/@WeruTVFM" },
+  { icon: "🎵", label: "TikTok",    href: "https://tiktok.com/@Werutv.fm96.4" },
+  { icon: "👍", label: "Facebook",  href: "https://facebook.com/WeruTV" },
+  { icon: "📸", label: "Instagram", href: "https://instagram.com/werutv" },
+  { icon: "✖️", label: "X (Twitter)", href: "https://x.com/WeruTV" },
+  { icon: "📍", label: "Find Us",   href: "https://maps.google.com/?q=Weru+TV+Kenya" },
 ];
 
 const containerVariants = {

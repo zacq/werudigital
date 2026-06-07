@@ -62,5 +62,12 @@ All motion uses **Framer Motion** — no CSS `transition` or `animation` classes
 ### Deployment
 Netlify + `@netlify/plugin-nextjs`. `next.config.ts` sets `output: "standalone"`. Push to `master` → auto-deploys to `werudigital.co.ke`.
 
+### QuizPromo section (`src/components/sections/QuizPromo.tsx`)
+Three animated promotional cards linking to `https://werudigital.co.ke/quiz`.
+
+- **Card 1** — "10 for 10: Castle Escape" — active link, CTA reads `Start Quiz →`
+- **Card 2** — "2 Bales of Lea Premium Unga" (Lea Premium) — **currently disabled** (no href, `cursor-default`), CTA reads `Coming Soon`. When the user provides a link: add `href`, set `target="_blank"`, change CTA label back to **`Play & Win →`**
+- **Card 3** — "Win a Ksh 5,000 Yetu Sacco Account" (Yetu Sacco) — **currently disabled** (no href, `cursor-default`), CTA reads `Coming Soon`. When the user provides a link: add `href`, set `target="_blank"`, change CTA label back to **`Join Now →`**
+
 ### QR code
 `generate-qr.mjs` (project root) generates `werudigital-qr-anniversary.png` — a branded 900×900 PNG using the `qrcode` + `sharp` packages. The Weru Logo is embedded as base64 from `Weru Logo.png`. Run with `node generate-qr.mjs` whenever the QR target URL or design changes.
