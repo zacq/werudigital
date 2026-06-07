@@ -52,7 +52,7 @@ export default function Hero() {
         <img
           src="/images/weru-digital-logo-final.jpeg"
           alt="Weru Digital"
-          style={{ height: "46px", width: "auto", objectFit: "contain", display: "block" }}
+          style={{ height: "47px", width: "auto", objectFit: "contain", display: "block" }}
         />
       </motion.div>
 
