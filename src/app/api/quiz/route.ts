@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const PAT      = process.env.AIRTABLE_QUIZ_PAT!;
-const BASE_ID  = process.env.AIRTABLE_QUIZ_BASE_ID!;
+const PAT      = process.env.AIRTABLE_PAT!;
+const BASE_ID  = process.env.AIRTABLE_BASE_ID!;
 const TABLE_ID = process.env.AIRTABLE_QUIZ_TABLE_ID!;
 
 const AIRTABLE_URL = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_ID}`;
