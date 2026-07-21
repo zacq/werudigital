@@ -16,6 +16,7 @@ const tiles = [
   { icon: "📱", label: "Mobile",    href: "tel:+254700117026" },
   { icon: "💬", label: "WhatsApp",  href: "https://wa.me/254793004303?text=Welcome%20to%20WeruTv" },
   { icon: "✉️", label: "Email Us",  href: "mailto:sales@werutv.co.ke" },
+  { icon: "📲", label: "Download App", href: undefined },
 ];
 
 const containerVariants = {
