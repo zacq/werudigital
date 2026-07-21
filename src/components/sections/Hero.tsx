@@ -1,93 +1,40 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import GlassButton from "@/components/ui/GlassButton";
+import GlassTile from "@/components/ui/GlassTile";
 
-const slides = [
-  { emoji: "📺", text: "Kenya's #1 broadcast experience — now right in your hands." },
-  { emoji: "🎁", text: "Subscribe to Weru TV & enter our weekly prize draw — winners announced live on air!" },
-  { emoji: "🛍️", text: "Our 10th Anniversary merch drop is coming — join the waitlist & be first to shop." },
-  { emoji: "🎵", text: "Follow us on TikTok & react to our videos — top fans get featured FREE on werudigital.co.ke!" },
-  { emoji: "📸", text: "Tag @WeruDigital on Instagram — most-liked post wins Weru goodies every month." },
-  { emoji: "▶️", text: "Subscribe on YouTube & comment — top engagers unlock exclusive Weru rewards." },
-  { emoji: "⭐", text: "Watch. Shop. Share. Get rewarded — only on Weru Digital." },
+const tiles = [
+  { icon: "🌐", label: "Website",    href: "https://werudigital.co.ke" },
+  { icon: "▶️", label: "YouTube",   href: "https://youtube.com/@werutvfm3411" },
+  { icon: "🎵", label: "TikTok",    href: "https://tiktok.com/@Werutv.fm96.4" },
+  { icon: "👍", label: "Facebook",  href: "https://facebook.com/WeruTV" },
+  { icon: "📸", label: "Instagram", href: "https://instagram.com/werutv" },
+  { icon: "✖️", label: "X (Twitter)", href: "https://x.com/WeruTV" },
+  { icon: "📍", label: "Find Us",   href: "https://maps.google.com/?q=Weru+TV+Kenya" },
+  { icon: "📞", label: "Call Hotline", href: "tel:+254707065000" },
+  { icon: "📱", label: "Mobile",    href: "tel:+254700117026" },
+  { icon: "💬", label: "WhatsApp",  href: "https://wa.me/254793004303?text=Welcome%20to%20WeruTv" },
+  { icon: "✉️", label: "Email Us",  href: "mailto:sales@werutv.co.ke" },
 ];
 
-const channels = [
-  "Zuku CH 39",
-  "DStv CH 368",
-  "Startimes CH 440",
-  "Azam Channel 342",
-  "Pang & Signet",
-];
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24, scale: 0.92 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+};
 
 export default function Hero() {
-  const [index, setIndex] = useState(0);
-
-  // Auto-advance every 4 seconds
-  useEffect(() => {
-    const id = setInterval(() => setIndex(i => (i + 1) % slides.length), 4000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <section className="relative z-10 flex flex-col items-center justify-center min-h-dvh px-5 pt-10 pb-8 text-center"
       style={{ background: "linear-gradient(160deg, #6B0A0A 0%, #7A1010 45%, #3a0808 100%)" }}
     >
-      {/* Logo header */}
-      <motion.div
-        className="mb-8"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        style={{
-          background: "white",
-          borderRadius: "16px",
-          padding: "10px 24px",
-          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%)",
-          maskImage: "linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%)",
-        }}
-      >
-        <img
-          src="/images/weru-digital-logo-final.jpeg"
-          alt="Weru Digital"
-          style={{ height: "47px", width: "auto", objectFit: "contain", display: "block" }}
-        />
-      </motion.div>
-
-      {/* ON AIR badge */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        className="mb-6"
-      >
-        <motion.div
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass"
-          style={{
-            background: "rgba(200, 16, 46, 0.18)",
-            border: "1px solid rgba(200, 16, 46, 0.50)",
-            boxShadow: "0 0 20px rgba(200, 16, 46, 0.25)",
-          }}
-          animate={{ boxShadow: [
-            "0 0 16px rgba(200,16,46,0.25)",
-            "0 0 32px rgba(200,16,46,0.55)",
-            "0 0 16px rgba(200,16,46,0.25)",
-          ]}}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <motion.span
-            className="w-2 h-2 rounded-full bg-[#C8102E]"
-            animate={{ opacity: [1, 0.3, 1] }}
-            transition={{ duration: 1.2, repeat: Infinity }}
-          />
-          <span className="text-xs font-bold text-white tracking-widest uppercase">
-            On Air Now
-          </span>
-        </motion.div>
-      </motion.div>
-
       {/* Headline */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -113,68 +60,12 @@ export default function Hero() {
         </h1>
       </motion.div>
 
-      {/* Sales carousel */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
-        className="mb-10 max-w-xs w-full"
-      >
-        {/* Slide text */}
-        <div className="relative h-20 flex items-center justify-center overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={index}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.38, ease: "easeOut" }}
-              className="absolute text-center px-1 leading-snug"
-              style={{
-                fontFamily: "var(--font-nunito), 'Nunito', sans-serif",
-                fontWeight: 800,
-                fontSize: "1.05rem",
-                background: "linear-gradient(180deg, #FFFFFF 0%, #FFE78A 45%, #FFC93C 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.55))",
-                letterSpacing: "-0.01em",
-              }}
-            >
-              <span style={{ WebkitTextFillColor: "initial", filter: "none" }} className="mr-1.5">
-                {slides[index].emoji}
-              </span>
-              {slides[index].text}
-            </motion.p>
-          </AnimatePresence>
-        </div>
-
-        {/* Dot indicators */}
-        <div className="flex items-center justify-center gap-1.5 mt-3">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setIndex(i)}
-              className="rounded-full transition-all"
-              style={{
-                width:  i === index ? "18px" : "6px",
-                height: "6px",
-                background: i === index ? "#f97d00" : "rgba(255,255,255,0.25)",
-                border: "none",
-                cursor: "pointer",
-              }}
-            />
-          ))}
-        </div>
-      </motion.div>
-
       {/* CTA Buttons */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.5 }}
-        className="flex flex-col sm:flex-row gap-4 w-full max-w-xs sm:max-w-sm"
+        className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-sm sm:max-w-md"
       >
         <GlassButton
           href="https://werudigital.co.ke/tv#tv-schedule"
@@ -194,56 +85,22 @@ export default function Hero() {
         </GlassButton>
       </motion.div>
 
-      {/* Rate Card button */}
+      {/* Quick Access tiles */}
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.75, duration: 0.5 }}
-        className="w-full max-w-xs sm:max-w-sm mt-3"
+        className="grid grid-cols-3 gap-2.5 sm:gap-3 max-w-sm mx-auto sm:max-w-md sm:grid-cols-4 mt-6 w-full"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <GlassButton
-          href="https://werudigital.co.ke/"
-          variant="pill"
-          icon="📋"
-          fullWidth
-        >
-          Request Rate Card
-        </GlassButton>
-      </motion.div>
-
-      {/* Channel ticker */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.9, duration: 0.5 }}
-        className="w-full max-w-xs sm:max-w-sm mt-4 overflow-hidden rounded-xl"
-        style={{
-          background: "rgba(0,0,0,0.40)",
-          border: "1px solid rgba(255,255,255,0.08)",
-          boxShadow: "0 2px 12px rgba(0,0,0,0.35)",
-        }}
-      >
-        <div className="flex items-center">
-          <div
-            className="flex-shrink-0 px-2.5 py-2 text-[9px] font-bold tracking-widest uppercase text-white"
-            style={{
-              background: "rgba(200,16,46,0.75)",
-              borderRight: "1px solid rgba(255,255,255,0.10)",
-            }}
-          >
-            WATCH
-          </div>
-          <div className="overflow-hidden flex-1">
-            <div className="ticker-ltr flex whitespace-nowrap">
-              {[...channels, ...channels].map((ch, i) => (
-                <span key={i} className="inline-flex items-center py-2 px-3 text-[11px] font-semibold text-white/80">
-                  📺 {ch}
-                  <span className="ml-3 text-white/25">·</span>
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
+        {tiles.map((tile) => (
+          <motion.div key={tile.label} variants={itemVariants}>
+            <GlassTile
+              icon={tile.icon}
+              label={tile.label}
+              href={tile.href}
+            />
+          </motion.div>
+        ))}
       </motion.div>
 
       {/* Scroll hint */}
